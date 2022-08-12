@@ -8,6 +8,7 @@ import example.demo.entities.TaskStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -40,6 +41,7 @@ public class TaskServiceImpl implements TaskService {
             taskStatusRepository.save(TaskStatus.builder()
                     .task(task)
                     .status(statusRepository.getReferenceById(statusId))
+                    .dataTime(LocalDateTime.now())
                     .build());
         } catch (Exception e) {
             throw new IllegalArgumentException(String.format("Не удалось добавить cтатус задаче № %d", task.getId()));

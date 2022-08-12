@@ -32,5 +32,7 @@ create table task_status (
     task_id integer,
     foreign key (task_id) references task(id),
     status_id integer,
-    foreign key (status_id) references status(id)
+    foreign key (status_id) references status(id),
+    data_time TIMESTAMP
+
 )

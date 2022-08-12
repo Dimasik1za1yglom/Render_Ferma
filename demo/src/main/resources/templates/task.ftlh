@@ -30,11 +30,13 @@
     <tr>
         <th>Название</th>
         <th>Cтатус</th>
+        <th>Время изменения статуса</th>
     </tr>
     <#list taskStatuses as taskStat>
         <tr>
             <td>${taskStat.task.name}</td>
             <td>${taskStat.status.name}</td>
+            <td>${taskStat.dataTime}</td>
         </tr>
     </#list>
 </table>

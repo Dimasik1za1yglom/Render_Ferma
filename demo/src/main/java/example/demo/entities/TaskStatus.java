@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -20,9 +21,12 @@ public class TaskStatus {
 
     @ManyToOne
     @JoinColumn(name = "task_id")
-    Task task;
+    private Task task;
 
     @ManyToOne
     @JoinColumn(name = "status_id")
-    Status status;
+    private Status status;
+
+    @Basic
+    private LocalDateTime dataTime;
 }
